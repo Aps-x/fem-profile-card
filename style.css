@@ -1,0 +1,191 @@
+/* ==========================================================================
+Root
+========================================================================== */
+:root {
+    --clr_blue:      hsl(185, 75%, 39%);
+    --clr_gray:      hsl(0, 0%, 59%);
+    --clr_white:     hsl(0, 0%, 100%);
+    --clr_dark_blue: hsl(229, 23%, 23%);
+    --clr_dark_gray: hsl(227, 10%, 46%);
+    --clr_light_gray:hsl(0, 2%, 85%);
+
+    --fs_small: 0.6rem;
+    --fs_medium: 0.75rem;
+    --fs_large: 1.125rem;
+
+    --fw_regular: 400;
+    --fw_bold: 700;
+}
+/* ==========================================================================
+HTML Elements
+========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+    text-rendering: optimizeSpeed;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Kumbh Sans", sans-serif;
+    font-weight: var(--fw_regular);
+    color: var(--clr_dark_blue);
+    background-color: var(--clr_blue);
+    overflow: hidden;
+}
+main {
+    min-height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }
+input, button, textarea, select {
+    font: inherit;
+}
+/* ==========================================================================
+Component Classes
+========================================================================== */
+.visually_hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+.bg_top {
+    position: absolute;
+    background: url('images/bg-pattern-top.svg');
+    background-size: contain;
+    background-repeat: repeat;
+    height: 1150px;
+    width: 1150px;
+    top: -528px;
+    left: -284px;
+    z-index: -1;
+}
+.bg_bottom {
+    position: absolute;
+    background: url('images/bg-pattern-bottom.svg');
+    background-size: contain;
+    background-repeat: repeat;
+    height: 1150px;
+    width: 1150px;
+    bottom: -628px;
+    right: -250px;
+    z-index: -1;
+}
+.card {
+    --max-width: 350px;
+    --container-gutter: 2rem;
+    width: min(var(--max-width), 100% - (var(--container-gutter) * 2));
+    height: 385px;
+    background-color: var(--clr_white);
+    border-radius: 12px;
+    overflow: hidden;
+}
+.card__header {
+    position: relative;
+}
+.header__background {
+    position: relative;
+    background-image: url('images/bg-pattern-card.svg');
+    background-size: cover;
+    height: 150px;
+    width: 100%;
+    z-index: 1;
+}
+.user_icon {
+    position: absolute;
+    bottom: -50px;
+    left: 0;
+    right: 0;
+    margin-inline: auto;
+    z-index: 2;
+    background-color: var(--clr_white);
+    border: 5px solid var(--clr_white);
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+}
+.card__content > * {
+    text-align: center;
+    margin-inline: auto;
+}
+.flex_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 4rem;
+}
+.user_name {
+    font-size: var(--fs_large);
+    font-weight: var(--fw_bold);
+    display: inline;
+}
+.user_age {
+    font-size: var(--fs_large);
+    color: var(--clr_gray);
+    display: inline;
+}
+.user_location {
+    margin-top: 0.5rem;
+    color: var(--clr_gray);
+}
+.rule {
+    margin-top: 2rem;
+    border-bottom: 1px solid var(--clr_light_gray);
+}
+.grid_container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 1.5rem;
+}
+.grid__user_info {
+    display: grid;
+    gap: 0.25rem;
+}
+.info_title {
+    order: 1;
+    font-size: var(--fs_small);
+    color: var(--clr_gray);
+    letter-spacing: 1px;
+}
+.info {
+    order: 0;
+    font-size: var(--fs_large);
+    font-weight: var(--fw_bold);
+}
+/* ==========================================================================
+Animation, Media Queries, & Fonts
+========================================================================== */
+@media(max-width: 600px){
+    .bg_top{
+        height: 375px;
+        width: 375px;
+        top:-160px;
+        left:-167px;
+    }
+    .bg_bottom{
+        height: 375px;
+        width: 375px;
+        bottom: -79px;
+        right: -167px;
+    }
+}
+/* ==========================================================================
+Utility Classes
+========================================================================== */
