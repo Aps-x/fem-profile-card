@@ -36,6 +36,10 @@ body {
     color: var(--clr_dark_blue);
     background-color: var(--clr_blue);
     overflow: hidden;
+    background-image: url("./images/bg-pattern-top.svg"), url("./images/bg-pattern-bottom.svg");
+    background-repeat: no-repeat, no-repeat;
+    background-size: 100rem;
+    background-position: right 48vw bottom 30vh, left 40vw top 45vh;
 }
 main {
     min-height: 100%;
@@ -66,7 +70,7 @@ Component Classes
     white-space: nowrap;
     border: 0;
 }
-.bg_top {
+/* .bg_top {
     position: absolute;
     background: url('images/bg-pattern-top.svg');
     background-size: contain;
@@ -87,7 +91,7 @@ Component Classes
     bottom: -628px;
     right: -250px;
     z-index: -1;
-}
+} */
 .card {
     --max-width: 350px;
     --container-gutter: 2rem;
@@ -172,18 +176,9 @@ Component Classes
 /* ==========================================================================
 Animation, Media Queries, & Fonts
 ========================================================================== */
-@media(max-width: 600px){
-    .bg_top{
-        height: 375px;
-        width: 375px;
-        top:-160px;
-        left:-167px;
-    }
-    .bg_bottom{
-        height: 375px;
-        width: 375px;
-        bottom: -79px;
-        right: -167px;
+@media (max-width: 600px) {
+    body {
+        background-position: right 35vw bottom 20vh, left 30vw top 25vh;
     }
 }
 /* ==========================================================================
